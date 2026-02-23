@@ -5,5 +5,43 @@
 {% endblock %}
 
 {% block content %}
-  <p>You are logged in as {{ current_user.username }}.</p>
+  <p>Welcome, {{ current_user.username }}!</p>
+
+  <nav class="nav-links">
+    <a href="{{ url_for('search') }}" class="button-background">
+      <span class="button-text">Search Recipes</span>
+    </a>
+    <a href="{{ url_for('add_recipe') }}" class="button-background">
+      <span class="button-text">Add Recipe</span>
+    </a>
+  </nav>
+
+  <section class="recipes-list">
+    <h2>All Recipes</h2>
+    {% if recipes %}
+      <ul class="recipe-cards">
+      {% for recipe in recipes %}
+        <li class="recipe-card">
+          <h3>{{ recipe.name }}</h3>
+          {% if recipe.description %}
+            <p>{{ recipe.description[:100] }}{% if recipe.description|length > 100 %}...{% endif %}</p>
+          {% endif %}
+          <div class="recipe-actions">
+            <a href="{{ url_for('view_recipe', recipe_id=recipe._id) }}" class="button-background">
+              <span class="button-text">View</span>
+            </a>
+            <a href="{{ url_for('edit_recipe', recipe_id=recipe._id) }}" class="button-background">
+              <span class="button-text">Edit</span>
+            </a>
+            <a href="{{ url_for('delete_recipe', recipe_id=recipe._id) }}" class="button-background button-danger">
+              <span class="button-text">Delete</span>
+            </a>
+          </div>
+        </li>
+      {% endfor %}
+      </ul>
+    {% else %}
+      <p class="no-recipes">No recipes yet. Add your first recipe!</p>
+    {% endif %}
+  </section>
 {% endblock %}
