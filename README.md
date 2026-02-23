@@ -16,7 +16,7 @@ User Stories: [GitHub Issues Page](https://github.com/swe-students-spring2026/2-
 2. Create and activate a virtual environment:
 	- Windows PowerShell: `python -m venv .venv` then `.\.venv\Scripts\Activate.ps1`
 3. Install dependencies:
-	- `pip install flask pymongo python-dotenv mongomock`
+	- `pip install flask pymongo python-dotenv`
 4. Create `.env` from `env.example`.
 5. For a guaranteed local demo (no MongoDB required), set in `.env`:
 	- `DEMO_MODE=true`
