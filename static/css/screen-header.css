@@ -11,7 +11,19 @@
     background-color: #000000;
 }
 
-.hamburger-menu,
+.hamburger-menu {
+    cursor: pointer;
+    
+    /* add width so screen-title will be centered */
+    display: flex;
+    width: 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+}
+
+
+
 .hamburger-spacer {
     /* add width so screen-title will be centered */
     display: flex;
@@ -19,7 +31,6 @@
     flex-direction: column;
     align-items: flex-start;
     gap: 7px;
-    
 }
 
 .screen-title {
