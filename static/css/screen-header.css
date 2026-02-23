@@ -1,0 +1,37 @@
+.screen-header {
+    /* make all items in screen-header be spaced evenly */
+    display: flex;
+    align-items: center;
+    
+}
+
+.hamburger-bar {
+    height: 8px;
+    width: 40px;
+    background-color: #000000;
+}
+
+.hamburger-menu,
+.hamburger-spacer {
+    /* add width so screen-title will be centered */
+    display: flex;
+    width: 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 7px;
+    
+}
+
+.screen-title {
+    /* make screen title take up all remaining space */
+    flex: 1;
+
+    /* format the text */
+    color: #000;
+    text-align: center;
+    font-family: Inter;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
